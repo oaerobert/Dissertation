@@ -114,7 +114,7 @@ https://transparency.entsoe.eu/
 - Resolution: Hourly
 - Currency: GBP/MWh
 - Time Standard: UTC (as provided by ENTSO-E)
-- Date Range Used: 2015–2020
+- Date Range Used: 2015–2019
 
 ### How to Download the Data
 
