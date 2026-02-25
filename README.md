@@ -13,7 +13,7 @@ While the merit-order effect implies that renewables reduce average wholesale pr
 
 This project investigates:
 
-> **To what extent does renewable generation — particularly wind output — affect the volatility of UK day-ahead electricity prices between 2015 and 2020?**
+> **To what extent does renewable generation — particularly wind output — affect the volatility of UK day-ahead electricity prices between 2015 and 2019?**
 
 The study integrates **econometric volatility modelling (ARX–GARCH)** with **machine learning techniques (Random Forest)** to assess whether volatility effects are linear and stable, or nonlinear and regime-dependent.
 
