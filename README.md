@@ -1,9 +1,4 @@
 # Dissertation
-Quantifying the Effect of Renewable Generation on UK Electricity Price Volatility: an Econometric and Machine Learning Approach
-# Quantifying the Effect of Renewable Generation on UK Electricity Price Volatility  
-## An Econometric and Machine Learning Approach  
-
----
 
 # Quantifying the Effect of Renewable Generation on UK Electricity Price Volatility  
 ## An Econometric and Machine Learning Approach  
