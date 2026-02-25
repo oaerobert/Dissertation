@@ -153,8 +153,7 @@ This sequential framework prioritises interpretability before introducing flexib
 
 - Lagged wind instruments  
 - Rolling-window stability tests  
-- Alternative volatility measures  
-- Pre- vs post-2021 sub-sample analysis  
+- Alternative volatility measures   
 - Clustered standard errors  
 - EGARCH specification comparison  
 
