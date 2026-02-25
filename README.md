@@ -13,7 +13,7 @@ While the merit-order effect implies that renewables reduce average wholesale pr
 
 This project investigates:
 
-> **To what extent does renewable generation — particularly wind output — affect the volatility of UK day-ahead electricity prices between 2015 and 2024?**
+> **To what extent does renewable generation — particularly wind output — affect the volatility of UK day-ahead electricity prices between 2015 and 2020?**
 
 The study integrates **econometric volatility modelling (ARX–GARCH)** with **machine learning techniques (Random Forest)** to assess whether volatility effects are linear and stable, or nonlinear and regime-dependent.
 
@@ -100,20 +100,40 @@ The objective is not purely predictive accuracy, but structural comparison:
 
 ---
 
-## 📊 Data  
+## Data Source
 
-**Period:** 2015–2024  
-**Frequency:** High-frequency (day-ahead / hourly aggregated)
+Day-ahead electricity price data were obtained from the ENTSO-E Transparency Platform:
 
-### Core Variables  
+ENTSO-E Transparency Platform  
+https://transparency.entsoe.eu/
 
-- UK Day-Ahead Electricity Price  
-- Wind Generation / Wind Share  
-- Gas Prices  
-- Electricity Demand  
-- Additional control variables  
+### Dataset Details
 
-COVID-era distortions (2020–2021) are excluded in baseline estimations and examined separately in robustness checks.
+- Market Area (Bidding Zone): BZN|GB (Great Britain)
+- Data Type: Day-Ahead Prices
+- Resolution: Hourly
+- Currency: GBP/MWh
+- Time Standard: UTC (as provided by ENTSO-E)
+- Date Range Used: 2015–2020
+
+### How to Download the Data
+
+1. Go to: https://transparency.entsoe.eu/
+2. Navigate to:  
+   `Market → Energy Prices`
+3. Select:
+   - Bidding Zone: **GB**
+   - Product: **Day-Ahead Prices**
+   - Time resolution: **Hourly**
+4. Choose the desired year or date range.
+5. Export the data as CSV.
+6. Repeat for each year required.
+
+Place all downloaded CSV files in:
+
+data/raw/entsoe/
+
+The raw data files are not included in this repository.
 
 ---
 
