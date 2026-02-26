@@ -1,0 +1,2 @@
+definition,spike_count,sample_size,spike_pct
+|return| > 3.0 * rolling_168h_std,497,43824,1.1340817816721431
