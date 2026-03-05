@@ -66,8 +66,6 @@ Repeat per year if required.
 │   ├── raw/                 # Raw ENTSO-E CSV exports
 │   ├── processed/           # Cleaned & transformed datasets
 │
-├── notebooks/               # Jupyter notebooks (exploratory + modelling)
-│
 ├── src/
 │   ├── data_processing.py
 │   ├── feature_engineering.py
