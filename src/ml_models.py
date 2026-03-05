@@ -88,7 +88,7 @@ y_spike = model_df["y_spike_next"].astype(int)
 
 # Settings (hourly data):
 TRAIN_HOURS = 24 * 365 * 2     # 2 years training
-TEST_HOURS = 24 * 30           # 1 month test blocks
+TEST_HOURS = 24 * 90           # 1 month test blocks
 STEP_HOURS = TEST_HOURS        # roll forward by 1 month
 
 vol_preds = []
@@ -103,7 +103,7 @@ start = TRAIN_HOURS
 end = start + TEST_HOURS
 
 while end <= n:
-    train_slice = slice(0, start)         # expanding window (safe + common)
+    train_slice = slice(start - TRAIN_HOURS, start)         # expanding window (safe + common)
     test_slice = slice(start, end)
 
     X_train, X_test = X.iloc[train_slice], X.iloc[test_slice]
@@ -112,7 +112,7 @@ while end <= n:
 
     # --- Volatility regressor ---
     rf_reg = RandomForestRegressor(
-        n_estimators=300,
+        n_estimators=150,
         max_depth=12,
         min_samples_leaf=5,
         random_state=42,
@@ -126,7 +126,7 @@ while end <= n:
 
     # --- Spike classifier ---
     rf_clf = RandomForestClassifier(
-        n_estimators=300,
+        n_estimators=150,
         max_depth=12,
         min_samples_leaf=5,
         random_state=42,
@@ -149,7 +149,8 @@ while end <= n:
 # 5) EVALUATION METRICS
 # ==========================================================
 
-vol_rmse = mean_squared_error(vol_true, vol_preds, squared=False)
+vol_mse = mean_squared_error(vol_true, vol_preds)
+vol_rmse = vol_mse ** 0.5
 vol_mae = mean_absolute_error(vol_true, vol_preds)
 
 spike_precision = precision_score(spike_true, spike_preds, zero_division=0)
@@ -182,6 +183,6 @@ out_metrics = pd.DataFrame([
     {"task": "spike", "model": "RandomForest", "precision": spike_precision, "recall": spike_recall, "f1": spike_f1, "auc": spike_auc},
 ])
 
-OUT_PATH = r"C:\Users\okeae\PycharmProjects\Dissertation Coding\results\tables\ml_results.csv"
+OUT_PATH = r"C:\Users\okeae\PycharmProjects\Dissertation Coding\ml_results.csv"
 out_metrics.to_csv(OUT_PATH, index=False)
 print("\nSaved ML results to:", OUT_PATH)
