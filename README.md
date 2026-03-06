@@ -68,7 +68,7 @@ Repeat per year if required.
 │
 ├── src/
 │   ├── data_processing.py
-│   ├── feature_engineering.py
+│   ├── forecast.py
 │   ├── econometric_models.py
 │   ├── ml_models.py
 │   ├── evaluation.py
@@ -119,7 +119,6 @@ Repeat per year if required.
 ### 3️⃣ Machine Learning Models
 
 - Random Forest (nonlinear benchmark)  
-- Optional: XGBoost  
 
 **Features**
 - Lagged returns (1–24 hours, 168 hours)  
